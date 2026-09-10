@@ -1,42 +1,59 @@
 [
   {
-    "id": "luna",
-    "name": "LuNa",
+    "id": "LuNa",
+    "name": "露娜",
     "tag": "PROTAGONIST / ARCHIVE-01",
-    "cover": "images/XiaoLu/XiaoLu_1.png",
+    "cover": "images/LuNa/LuNa_1.png",     /* 外层封面图 */
     "shortBio": "穿梭于虚空与破碎星环的观测者，拥有具象化梦境的能力。",
     "styles": [
       {
         "styleName": "Void Traveler (虚空漫游者)",
         "tag": "DEFAULT FORM",
-        "img": "images/XiaoLu_1.png",
+        "img": "images/LuNa/LuNa_1.png",
         "lore": "初始宇宙战衣形态。常年漫步在绝对冷寂的深渊星域，面部带有折射微光的微晶质面具，能够吸收宇宙尘埃作为能量补给。"
       },
       {
         "styleName": "Neo Cyber (霓虹残响)",
         "tag": "CYBERPUNK ALTERNATE",
-        "img": "images/XiaoLu/XiaoLu_1.png",
+        "img": "images/LuNa/LuNa_1.png",
         "lore": "进入高度义体化都市时的形态。暗色漆面风衣与高频共振刃具，专门用于潜入受污染的数据中枢，清理暴走的数据幽灵。"
       },
       {
         "styleName": "Gothic Requiem (哥特安魂曲)",
         "tag": "CEREMONIAL",
-        "img": "images/XiaoLu/XiaoLu_1.png",
+        "img": "images/LuNa/LuNa_1.png",
         "lore": "身披轻纱与荆棘王冠的礼仪形态。通常在星系迎来不可逆坍缩的末日时刻出现，为垂死的星核吟唱沉眠的祈礼。"
       }
     ]
   },
-  {
-    "id": "morrigan",
-    "name": "Morrigan",
+
+   {
+    "id": "TaiLiSha",
+    "name": "泰莉莎",
     "tag": "VANGUARD / ARCHIVE-02",
-    "cover": "LuNa_1.png",
+    "cover": "images/TaiLiSha/Sister.png",
     "shortBio": "诞生于超新星残骸之中的终末兵器，执掌毁灭与静止。",
     "styles": [
       {
         "styleName": "Black Matter (暗物质形态)",
         "tag": "COMBAT ALPHA",
-        "img": "LuNa_1.png",
+        "img": "images/TaiLiSha/Sister.png",
+        "lore": "通体流动着负能量粒子，外附轻量化碳纤维骨骼，能短时间扭曲周围光线达到隐形效果。"
+      }
+    ]
+  }
+  
+  {
+    "id": "XiaoLu",
+    "name": "晓璐",
+    "tag": "VANGUARD / ARCHIVE-02",
+    "cover": "images/XiaoLu/XiaoLu_1.png",
+    "shortBio": "诞生于超新星残骸之中的终末兵器，执掌毁灭与静止。",
+    "styles": [
+      {
+        "styleName": "Black Matter (暗物质形态)",
+        "tag": "COMBAT ALPHA",
+        "img": "images/XiaoLu/XiaoLu_1.png",
         "lore": "通体流动着负能量粒子，外附轻量化碳纤维骨骼，能短时间扭曲周围光线达到隐形效果。"
       }
     ]
