@@ -9,19 +9,19 @@
       {
         "styleName": "Void Traveler (虚空漫游者)",
         "tag": "DEFAULT FORM",
-        "img": "LuNa_1.png",
+        "img": "images/XiaoLu_1.png",
         "lore": "初始宇宙战衣形态。常年漫步在绝对冷寂的深渊星域，面部带有折射微光的微晶质面具，能够吸收宇宙尘埃作为能量补给。"
       },
       {
         "styleName": "Neo Cyber (霓虹残响)",
         "tag": "CYBERPUNK ALTERNATE",
-        "img": "LuNa_1.png",
+        "img": "images/XiaoLu_1.png",
         "lore": "进入高度义体化都市时的形态。暗色漆面风衣与高频共振刃具，专门用于潜入受污染的数据中枢，清理暴走的数据幽灵。"
       },
       {
         "styleName": "Gothic Requiem (哥特安魂曲)",
         "tag": "CEREMONIAL",
-        "img": "LuNa_1.png",
+        "img": "images/XiaoLu_1.png",
         "lore": "身披轻纱与荆棘王冠的礼仪形态。通常在星系迎来不可逆坍缩的末日时刻出现，为垂死的星核吟唱沉眠的祈礼。"
       }
     ]
