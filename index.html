@@ -1,424 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MournDeath</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #080808;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+body{
+    background:#050505;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
 }
 
-/* 顶部导航 */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 28px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-    mix-blend-mode: difference;
+
+/* 导航 */
+
+nav{
+
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:30px 60px;
+    display:flex;
+    justify-content:space-between;
+    z-index:10;
+
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 4px;
+.logo{
+
+    font-size:20px;
+    letter-spacing:6px;
+    font-weight:bold;
+
 }
 
-.nav-right {
-    font-size: 12px;
-    letter-spacing: 2px;
+.menu{
+
+    font-size:12px;
+    letter-spacing:4px;
+    opacity:.7;
+
 }
+
+
 
 /* 首页 */
-.hero {
-    height: 100vh;
-    min-height: 650px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+
+.hero{
+
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+
 }
 
-.hero-bg {
-    position: absolute;
-    inset: 0;
+
+.background{
+
+    position:absolute;
+    inset:0;
+
     background:
-        radial-gradient(circle at 50% 45%, #303030 0%, #111111 35%, #050505 75%);
+    radial-gradient(
+    circle at center,
+    #333,
+    #080808 60%
+    );
+
+    animation:breath 8s infinite alternate;
+
 }
 
-.hero-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.5)
-        );
+
+
+@keyframes breath{
+
+from{
+transform:scale(1);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+to{
+transform:scale(1.15);
 }
 
-.small-title {
-    font-size: 11px;
-    letter-spacing: 7px;
-    margin-bottom: 30px;
-    opacity: 0.65;
 }
 
-.hero-title {
-    font-size: clamp(60px, 11vw, 170px);
-    font-weight: 700;
-    letter-spacing: -5px;
-    line-height: 0.9;
+
+
+
+.content{
+
+    position:relative;
+    text-align:center;
+
+    animation:intro 2s ease;
+
 }
 
-.hero-subtitle {
-    margin-top: 35px;
-    font-size: 13px;
-    letter-spacing: 5px;
-    opacity: 0.6;
+
+
+@keyframes intro{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
 }
 
-.enter {
-    display: inline-block;
-    margin-top: 70px;
-    padding: 15px 34px;
-    border: 1px solid rgba(255,255,255,0.45);
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 4px;
-    transition: 0.4s;
+to{
+
+opacity:1;
+transform:translateY(0);
+
 }
 
-.enter:hover {
-    background: white;
-    color: black;
 }
 
-/* 向下箭头 */
-.scroll {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    opacity: 0.5;
-    animation: float 2s infinite;
+
+
+.small{
+
+font-size:12px;
+letter-spacing:8px;
+opacity:.6;
+margin-bottom:30px;
+
 }
 
-@keyframes float {
-    0%,100% {
-        transform: translate(-50%,0);
-    }
-    50% {
-        transform: translate(-50%,8px);
-    }
+
+
+h1{
+
+font-size:clamp(70px,12vw,160px);
+letter-spacing:-5px;
+line-height:.85;
+
 }
 
-/* 作品区域 */
-.section {
-    min-height: 100vh;
-    padding: 140px 8%;
-    background: #0b0b0b;
+
+
+.subtitle{
+
+margin-top:40px;
+font-size:13px;
+letter-spacing:6px;
+opacity:.6;
+
 }
 
-.section-label {
-    font-size: 11px;
-    letter-spacing: 5px;
-    opacity: 0.45;
-    margin-bottom: 25px;
+
+
+.button{
+
+display:inline-block;
+margin-top:70px;
+
+padding:15px 40px;
+
+border:1px solid #555;
+
+color:white;
+text-decoration:none;
+
+letter-spacing:5px;
+font-size:12px;
+
+transition:.5s;
+
 }
 
-.section-title {
-    font-size: clamp(45px, 7vw, 100px);
-    font-weight: 500;
-    letter-spacing: -3px;
-    margin-bottom: 90px;
+
+.button:hover{
+
+background:white;
+color:black;
+
 }
 
-.work {
-    position: relative;
-    height: 65vh;
-    min-height: 450px;
-    overflow: hidden;
-    margin-bottom: 100px;
-    background: #161616;
+
+
+/* 作品 */
+
+section{
+
+padding:120px 8%;
+
 }
 
-.work-image {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            120deg,
-            #252525,
-            #101010
-        );
-    transition: transform 1s ease;
+
+
+.title{
+
+font-size:70px;
+letter-spacing:-3px;
+margin-bottom:60px;
+
 }
 
-.work:hover .work-image {
-    transform: scale(1.04);
+
+
+.card{
+
+height:500px;
+
+background:
+
+linear-gradient(
+120deg,
+#222,
+#080808
+);
+
+display:flex;
+align-items:end;
+
+padding:50px;
+
+transition:.6s;
+
 }
 
-.work-info {
-    position: absolute;
-    left: 45px;
-    bottom: 40px;
-    z-index: 2;
+
+
+.card:hover{
+
+transform:scale(1.03);
+
 }
 
-.work-number {
-    font-size: 11px;
-    letter-spacing: 4px;
-    opacity: 0.5;
-    margin-bottom: 12px;
+
+
+.card h2{
+
+font-size:60px;
+
 }
 
-.work-name {
-    font-size: clamp(35px, 5vw, 70px);
-    font-weight: 500;
+
+
+
+/* 图片区域 */
+
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
 }
 
-.work-type {
-    margin-top: 10px;
-    font-size: 12px;
-    letter-spacing: 3px;
-    opacity: 0.55;
+
+.box{
+
+height:400px;
+
+background:#151515;
+
+transition:.5s;
+
 }
 
-/* 图片库 */
-.gallery {
-    min-height: 100vh;
-    padding: 140px 8%;
+
+.box:hover{
+
+transform:translateY(-20px);
+
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+
+
+
+footer{
+
+padding:60px;
+
+border-top:1px solid #222;
+
+text-align:center;
+
+opacity:.5;
+
+letter-spacing:4px;
+
 }
 
-.gallery-item {
-    height: 500px;
-    background:
-        linear-gradient(
-            135deg,
-            #252525,
-            #111111
-        );
-    overflow: hidden;
-    position: relative;
+
+
+@media(max-width:700px){
+
+nav{
+
+padding:20px;
+
 }
 
-.gallery-item:nth-child(2) {
-    margin-top: 100px;
+.gallery{
+
+grid-template-columns:1fr;
+
 }
 
-.gallery-item:nth-child(3) {
-    margin-top: -50px;
+.title{
+
+font-size:45px;
+
 }
 
-.gallery-item span {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    opacity: 0.65;
 }
 
-/* 页脚 */
-footer {
-    padding: 80px 8%;
-    border-top: 1px solid #222;
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    letter-spacing: 3px;
-    opacity: 0.5;
-}
-
-@media (max-width: 700px) {
-
-    nav {
-        padding: 22px 6%;
-    }
-
-    .hero-title {
-        letter-spacing: -3px;
-    }
-
-    .section,
-    .gallery {
-        padding: 100px 6%;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item,
-    .work {
-        height: 420px;
-    }
-
-    .gallery-item:nth-child(2),
-    .gallery-item:nth-child(3) {
-        margin-top: 0;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
 </style>
+
+
 </head>
+
 
 <body>
 
+
+
 <nav>
-    <div class="logo">MOURNDEATH</div>
-    <div class="nav-right">ARCHIVE / 001</div>
+
+<div class="logo">
+MOURNDEATH
+</div>
+
+<div class="menu">
+ARCHIVE
+</div>
+
 </nav>
 
-<section class="hero">
 
-    <div class="hero-bg"></div>
 
-    <div class="hero-content">
+<div class="hero">
 
-        <div class="small-title">
-            GAMES · ART · WORLDS
-        </div>
 
-        <h1 class="hero-title">
-            MOURN<br>DEATH
-        </h1>
+<div class="background"></div>
 
-        <div class="hero-subtitle">
-            ENTER THE UNKNOWN
-        </div>
 
-        <a href="#works" class="enter">
-            ENTER
-        </a>
+<div class="content">
 
-    </div>
 
-    <div class="scroll">↓</div>
+<div class="small">
+GAMES · ART · WORLDS
+</div>
+
+
+<h1>
+MOURN<br>
+DEATH
+</h1>
+
+
+<div class="subtitle">
+ENTER THE UNKNOWN
+</div>
+
+
+<a class="button" href="#works">
+ENTER
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<section id="works">
+
+
+<div class="title">
+Works
+</div>
+
+
+<div class="card">
+
+<h2>
+PROJECT 001
+</h2>
+
+</div>
+
 
 </section>
 
 
-<section class="section" id="works">
 
-    <div class="section-label">
-        01 / SELECTED WORKS
-    </div>
 
-    <h2 class="section-title">
-        Works
-    </h2>
 
-    <div class="work">
+<section>
 
-        <div class="work-image"></div>
 
-        <div class="work-info">
+<div class="title">
+Gallery
+</div>
 
-            <div class="work-number">
-                PROJECT 001
-            </div>
 
-            <div class="work-name">
-                UNKNOWN
-            </div>
 
-            <div class="work-type">
-                GAME / EXPERIENCE
-            </div>
+<div class="gallery">
 
-        </div>
 
-    </div>
+<div class="box"></div>
+
+<div class="box"></div>
+
+<div class="box"></div>
+
+<div class="box"></div>
+
+
+</div>
+
+
 
 </section>
 
 
-<section class="gallery">
 
-    <div class="section-label">
-        02 / VISUAL ARCHIVE
-    </div>
-
-    <h2 class="section-title">
-        Gallery
-    </h2>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-item">
-            <span>IMAGE 001</span>
-        </div>
-
-        <div class="gallery-item">
-            <span>IMAGE 002</span>
-        </div>
-
-        <div class="gallery-item">
-            <span>IMAGE 003</span>
-        </div>
-
-        <div class="gallery-item">
-            <span>IMAGE 004</span>
-        </div>
-
-    </div>
-
-</section>
 
 
 <footer>
 
-    <div>
-        MOURNDEATH
-    </div>
-
-    <div>
-        © 2026
-    </div>
+MOURNDEATH © 2026
 
 </footer>
 
+
+
+
 </body>
+
 </html>
