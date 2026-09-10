@@ -76,16 +76,18 @@ nav{
 .background{
 
     position:absolute;
-    inset:0;
+    inset:-20%;
 
     background:
     radial-gradient(
-    circle at center,
-    #333,
+    circle at 50% 50%,
+    #444,
     #080808 60%
     );
 
-    animation:breath 8s infinite alternate;
+    animation:
+    breath 8s infinite alternate,
+    moveLight 15s infinite alternate;
 
 }
 
@@ -103,7 +105,23 @@ transform:scale(1.15);
 
 }
 
+@keyframes moveLight{
 
+0%{
+
+background-position:30% 40%;
+
+}
+
+
+100%{
+
+background-position:70% 60%;
+
+}
+
+}
+    
 
 
 .content{
