@@ -89,9 +89,55 @@ nav{
     breath 8s infinite alternate,
     moveLight 15s infinite alternate;
 
+    overflow:hidden;
+
+}
+
+.background::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background-image:
+radial-gradient(
+white 1px,
+transparent 1px
+);
+
+
+background-size:80px 80px;
+
+
+opacity:0.08;
+
+
+animation:particles 20s linear infinite;
+
 }
 
 
+
+@keyframes particles{
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-100px);
+
+}
+
+}
+    
 
 @keyframes breath{
 
