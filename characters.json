@@ -3,7 +3,7 @@
     "id": "luna",
     "name": "LuNa",
     "tag": "PROTAGONIST / ARCHIVE-01",
-    "cover": "images/XiaoLu_1.png",
+    "cover": "images/XiaoLu/XiaoLu_1.png",
     "shortBio": "穿梭于虚空与破碎星环的观测者，拥有具象化梦境的能力。",
     "styles": [
       {
@@ -15,13 +15,13 @@
       {
         "styleName": "Neo Cyber (霓虹残响)",
         "tag": "CYBERPUNK ALTERNATE",
-        "img": "images/XiaoLu_1.png",
+        "img": "images/XiaoLu/XiaoLu_1.png",
         "lore": "进入高度义体化都市时的形态。暗色漆面风衣与高频共振刃具，专门用于潜入受污染的数据中枢，清理暴走的数据幽灵。"
       },
       {
         "styleName": "Gothic Requiem (哥特安魂曲)",
         "tag": "CEREMONIAL",
-        "img": "images/XiaoLu_1.png",
+        "img": "images/XiaoLu/XiaoLu_1.png",
         "lore": "身披轻纱与荆棘王冠的礼仪形态。通常在星系迎来不可逆坍缩的末日时刻出现，为垂死的星核吟唱沉眠的祈礼。"
       }
     ]
