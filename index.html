@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MournDeath</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* 顶部导航 */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    mix-blend-mode: difference;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.nav-right {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* 首页 */
+.hero {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 45%, #303030 0%, #111111 35%, #050505 75%);
+}
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.5)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 7px;
+    margin-bottom: 30px;
+    opacity: 0.65;
+}
+
+.hero-title {
+    font-size: clamp(60px, 11vw, 170px);
+    font-weight: 700;
+    letter-spacing: -5px;
+    line-height: 0.9;
+}
+
+.hero-subtitle {
+    margin-top: 35px;
+    font-size: 13px;
+    letter-spacing: 5px;
+    opacity: 0.6;
+}
+
+.enter {
+    display: inline-block;
+    margin-top: 70px;
+    padding: 15px 34px;
+    border: 1px solid rgba(255,255,255,0.45);
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 4px;
+    transition: 0.4s;
+}
+
+.enter:hover {
+    background: white;
+    color: black;
+}
+
+/* 向下箭头 */
+.scroll {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    opacity: 0.5;
+    animation: float 2s infinite;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translate(-50%,0);
+    }
+    50% {
+        transform: translate(-50%,8px);
+    }
+}
+
+/* 作品区域 */
+.section {
+    min-height: 100vh;
+    padding: 140px 8%;
+    background: #0b0b0b;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    opacity: 0.45;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: clamp(45px, 7vw, 100px);
+    font-weight: 500;
+    letter-spacing: -3px;
+    margin-bottom: 90px;
+}
+
+.work {
+    position: relative;
+    height: 65vh;
+    min-height: 450px;
+    overflow: hidden;
+    margin-bottom: 100px;
+    background: #161616;
+}
+
+.work-image {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            120deg,
+            #252525,
+            #101010
+        );
+    transition: transform 1s ease;
+}
+
+.work:hover .work-image {
+    transform: scale(1.04);
+}
+
+.work-info {
+    position: absolute;
+    left: 45px;
+    bottom: 40px;
+    z-index: 2;
+}
+
+.work-number {
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: 0.5;
+    margin-bottom: 12px;
+}
+
+.work-name {
+    font-size: clamp(35px, 5vw, 70px);
+    font-weight: 500;
+}
+
+.work-type {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+}
+
+/* 图片库 */
+.gallery {
+    min-height: 100vh;
+    padding: 140px 8%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 500px;
+    background:
+        linear-gradient(
+            135deg,
+            #252525,
+            #111111
+        );
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item:nth-child(2) {
+    margin-top: 100px;
+}
+
+.gallery-item:nth-child(3) {
+    margin-top: -50px;
+}
+
+.gallery-item span {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.65;
+}
+
+/* 页脚 */
+footer {
+    padding: 80px 8%;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.5;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 22px 6%;
+    }
+
+    .hero-title {
+        letter-spacing: -3px;
+    }
+
+    .section,
+    .gallery {
+        padding: 100px 6%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item,
+    .work {
+        height: 420px;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3) {
+        margin-top: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">MOURNDEATH</div>
+    <div class="nav-right">ARCHIVE / 001</div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            GAMES · ART · WORLDS
+        </div>
+
+        <h1 class="hero-title">
+            MOURN<br>DEATH
+        </h1>
+
+        <div class="hero-subtitle">
+            ENTER THE UNKNOWN
+        </div>
+
+        <a href="#works" class="enter">
+            ENTER
+        </a>
+
+    </div>
+
+    <div class="scroll">↓</div>
+
+</section>
+
+
+<section class="section" id="works">
+
+    <div class="section-label">
+        01 / SELECTED WORKS
+    </div>
+
+    <h2 class="section-title">
+        Works
+    </h2>
+
+    <div class="work">
+
+        <div class="work-image"></div>
+
+        <div class="work-info">
+
+            <div class="work-number">
+                PROJECT 001
+            </div>
+
+            <div class="work-name">
+                UNKNOWN
+            </div>
+
+            <div class="work-type">
+                GAME / EXPERIENCE
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="gallery">
+
+    <div class="section-label">
+        02 / VISUAL ARCHIVE
+    </div>
+
+    <h2 class="section-title">
+        Gallery
+    </h2>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <span>IMAGE 001</span>
+        </div>
+
+        <div class="gallery-item">
+            <span>IMAGE 002</span>
+        </div>
+
+        <div class="gallery-item">
+            <span>IMAGE 003</span>
+        </div>
+
+        <div class="gallery-item">
+            <span>IMAGE 004</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div>
+        MOURNDEATH
+    </div>
+
+    <div>
+        © 2026
+    </div>
+
+</footer>
+
+</body>
+</html>
