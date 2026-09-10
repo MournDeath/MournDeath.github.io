@@ -3,7 +3,7 @@
     "id": "LuNa",
     "name": "露娜",
     "tag": "PROTAGONIST / ARCHIVE-01",
-    "cover": "images/LuNa/LuNa_1.png",     /* 外层封面 */
+    "cover": "images/LuNa/LuNa_1.png",
     "shortBio": "穿梭于虚空与破碎星环的观测者，拥有具象化梦境的能力。",
     "styles": [
       {
@@ -41,7 +41,7 @@
         "lore": "通体流动着负能量粒子，外附轻量化碳纤维骨骼，能短时间扭曲周围光线达到隐形效果。"
       }
     ]
-  }
+  },
   
   {
     "id": "XiaoLu",
