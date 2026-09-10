@@ -541,7 +541,28 @@ MOURNDEATH © 2026
 </footer>
 
 
+<script>
 
+const background = document.querySelector(".background");
+const content = document.querySelector(".content");
+
+
+document.addEventListener("mousemove", function(e){
+
+    let x = (e.clientX / window.innerWidth - 0.5) * 20;
+    let y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+
+    background.style.transform =
+    `translate(${x}px, ${y}px) scale(1.1)`;
+
+
+    content.style.transform =
+    `translate(${x * 0.3}px, ${y * 0.3}px)`;
+
+});
+
+</script>
 
 </body>
 
