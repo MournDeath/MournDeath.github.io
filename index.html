@@ -111,7 +111,7 @@ transform:scale(1.15);
     position:relative;
     text-align:center;
 
-    animation:intro 2s ease;
+    animation:intro 3s ease;
 
 }
 
@@ -135,6 +135,50 @@ transform:translateY(0);
 
 }
 
+@keyframes fadeText{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:.6;
+
+transform:translateY(0);
+
+}
+
+}
+    
+@keyframes titleReveal{
+
+0%{
+
+opacity:0;
+
+filter:blur(15px);
+
+transform:scale(1.1);
+
+}
+
+
+100%{
+
+opacity:1;
+
+filter:blur(0);
+
+transform:scale(1);
+
+}
+
+}
 
 
 .small{
@@ -154,6 +198,10 @@ font-size:clamp(70px,12vw,160px);
 letter-spacing:-5px;
 line-height:.85;
 
+animation:titleReveal 2.5s ease forwards;
+
+opacity:0;
+
 }
 
 
@@ -163,7 +211,12 @@ line-height:.85;
 margin-top:40px;
 font-size:13px;
 letter-spacing:6px;
-opacity:.6;
+
+opacity:0;
+
+animation:fadeText 2s ease forwards;
+
+animation-delay:2s;
 
 }
 
@@ -174,6 +227,28 @@ opacity:.6;
 display:inline-block;
 margin-top:70px;
 
+opacity:0;
+
+animation:fadeButton 2s ease forwards;
+
+animation-delay:3s;
+
+@keyframes fadeButton{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+    
 padding:15px 40px;
 
 border:1px solid #555;
