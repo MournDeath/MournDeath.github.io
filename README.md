@@ -1,2 +1,2 @@
 # MournDeath.github.io
-Counter Strike Online
+For Counter Strike Online
