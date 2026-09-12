@@ -9,6 +9,22 @@
     <!-- 引入独立样式表 -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+  (function() {
+    const password = "249205"; // 替换成你想设置的密码
+    if (sessionStorage.getItem("auth") !== "true") {
+      const input = prompt("该页面受密码保护，请输入访问密码：");
+      if (input === password) {
+        sessionStorage.setItem("auth", "true");
+      } else {
+        alert("密码错误，无法查看！");
+        window.location.replace("https://www.google.com");
+      }
+    }
+  })();
+</script>
+    
 <body>
 
     <nav>
