@@ -12,7 +12,8 @@
 
 <!-- 星云毛玻璃密码遮罩 -->
 <div id="pwdGate" style="
-  position: fixed; inset: 0; z-index: 99999;
+  position: fixed; inset: 0; z-index: 99999;    
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   background: radial-gradient(circle at 50% 50%, rgba(26, 11, 46, 0.45) 0%, rgba(8, 4, 18, 0.7) 100%),
               url('images/LuNa/LuNa_1.png') center/cover no-repeat;
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -76,12 +77,18 @@
     }
   })();
 
-  function verifyPwd() {
+ function verifyPwd() {
     const pwd = document.getElementById("pwdInput").value;
     const correct = "249205";
     if (pwd === correct) {
       sessionStorage.setItem("auth", "true");
-      document.getElementById("pwdGate").style.display = "none";
+      const gate = document.getElementById("pwdGate");
+      gate.style.opacity = "0";
+      gate.style.transform = "scale(1.05)";
+      gate.style.pointerEvents = "none";
+      setTimeout(() => {
+        gate.style.display = "none";
+      }, 800);
     } else {
       const err = document.getElementById("pwdErr");
       err.style.display = "block";
