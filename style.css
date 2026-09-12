@@ -8,7 +8,7 @@ body {
     /* 把 0.7 和 0.88 改小，背景图就会变亮 */
     background: 
         linear-gradient(to bottom, rgba(9, 9, 21, 0.2) 0%, rgba(9, 9, 21, 0.4) 100%),
-        url("images/LuNa/LuNa_1.png") center center / cover no-repeat fixed;
+        url("images/NaNa/NaNa_2.png") center center / cover no-repeat fixed;
     color: #f3f3ff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
